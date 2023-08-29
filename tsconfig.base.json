@@ -147,6 +147,7 @@
       "@activepieces/piece-salesforce": [
         "packages/pieces/salesforce/src/index.ts"
       ],
+      "@activepieces/piece-savvycal": ["packages/pieces/savvycal/src/index.ts"],
       "@activepieces/piece-schedule": ["packages/pieces/schedule/src/index.ts"],
       "@activepieces/piece-sendgrid": ["packages/pieces/sendgrid/src/index.ts"],
       "@activepieces/piece-sendinblue": [

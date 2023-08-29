@@ -1,0 +1,42 @@
+{
+  "name": "pieces-savvycal",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/savvycal/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/pieces/savvycal",
+        "tsConfig": "packages/pieces/savvycal/tsconfig.lib.json",
+        "packageJson": "packages/pieces/savvycal/package.json",
+        "main": "packages/pieces/savvycal/src/index.ts",
+        "assets": [
+          "packages/pieces/savvycal/*.md"
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs pieces-savvycal {args.ver} {args.tag}",
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/pieces/savvycal/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
